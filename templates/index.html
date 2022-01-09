@@ -15,8 +15,15 @@
         <h1>Currency Converter</h1>
         <p>Welcome to the currency application.</p>
         <p>Currently Supported: CADtoUSD</p>
-        <p>*Note: Please enter /ChosenConversion after the url</p>
+        <p>*Please enter /ChosenConversion after the url</p>
+        <div>
+            {% block CADtoUSD %}
+            {% endblock %}
+            {% block USDtoCAD %}
+            {% endblock %}
+        </div>
+        
 
-        <p>Hello, {{ name }}</p>
+        <script type="text/javascript" src="{{ url_for('static', filename='script.js')}}'"></script>
     </body><!-- these must be the last two lines of an HTML document --><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
 </html>
