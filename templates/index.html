@@ -12,10 +12,16 @@
 
    
 	<body style="text-align: center;">
+        <br><br>
         <h1>Currency Converter</h1>
         <p>Welcome to the currency application.</p>
-        <p>Currently Supported: CADtoUSD</p>
-        <p>*Please enter /ChosenConversion after the url</p>
+        <p>Currently Supported: /CADtoUSD, /USDtoCAD</p>
+        <p>Please enter /ChosenConversion as shown above or select one of the links below:</p>
+
+        <a href="{{ url_for('views.home') }}"><button>Home</button></a>
+        <a href="{{ url_for('views.cad_to_usd') }}"><button>CAD -> USD</button></a>
+        <a href="{{ url_for('views.usd_to_cad') }}"><button>USD -> CAD</button></a>
+
         <div>
             {% block CADtoUSD %}
             {% endblock %}

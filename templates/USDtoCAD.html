@@ -6,18 +6,12 @@
     <h1>USD -> CAD</h1>
 
     <form class="container" action="/resultUSDtoCAD" method="POST">
-        <label for="value">Enter USD :</label>
-        <input type="text" name="value" id="value">
+        <input type="text" placeholder="Enter USD"  name="value" id="value">
         <br>
         <input type="Submit" class="file_submit">
-        <h1>value = {{name}}</h1>
+        {% if result %}
+            <h1> {{currency}} USD = {{result}} CAD</h1>
+        {% endif %}
     </form>
-
-
-
-
 </div>
-    
-
-
 {% endblock %}
