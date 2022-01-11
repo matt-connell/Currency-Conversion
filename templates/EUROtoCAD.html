@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block EUROtoCAD %}
+<br><br>
+
+<div style="text-align: center;">
+    <h1>EURO -> CAD</h1>
+
+    <form class="container" action="/resultEUROtoCAD" method="POST">
+        <input type="text" placeholder="Enter EURO" name="value" id="value">
+        <br>
+        <input type="Submit" class="file_submit">
+
+        {% if result %}
+            <h1> {{currency}} EURO = {{result}} CAD</h1>
+        {% endif %} 
+    </form>
+
+
+
+
+</div>
+    
+
+
+{% endblock %}

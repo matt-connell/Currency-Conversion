@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename= 'styles.css') }}">
+        <link rel="stylesheet" type="text/css"  href="{{ url_for('static', filename= 'styles.css') }}">
 
 		<title>Currency Converter</title>
 	</head>
@@ -14,18 +14,23 @@
 	<body style="text-align: center;">
         <br><br>
         <h1>Currency Converter</h1>
-        <p>Welcome to the currency application.</p>
-        <p>Currently Supported: /CADtoUSD, /USDtoCAD</p>
-        <p>Please enter /ChosenConversion as shown above or select one of the links below:</p>
-
+        <p>This application will currency between the selected currency</p>
         <a href="{{ url_for('views.home') }}"><button>Home</button></a>
-        <a href="{{ url_for('views.cad_to_usd') }}"><button>CAD -> USD</button></a>
-        <a href="{{ url_for('views.usd_to_cad') }}"><button>USD -> CAD</button></a>
+        <br>
+        <a href="{{ url_for('views.cad_to_usd') }}"><button>CAD to USD</button></a>
+        <a href="{{ url_for('views.usd_to_cad') }}"><button>USD to CAD</button></a>
+        <br>
+        <a href="{{ url_for('views.cad_to_euro') }}"><button>CAD to EURO</button></a>
+        <a href="{{ url_for('views.euro_to_cad') }}"><button>EURO to CAD</button></a>
 
         <div>
             {% block CADtoUSD %}
             {% endblock %}
+            {% block CADtoEURO %}
+            {% endblock %}
             {% block USDtoCAD %}
+            {% endblock %}
+            {% block EUROtoCAD %}
             {% endblock %}
         </div>
         

@@ -53,3 +53,45 @@ def resultUSDtoCAD():
     format_float = "{:.2f}".format(result)
     #assign variables and render html file
     return render_template("USDtoCAD.html", result=format_float, currency=format_currency)    
+
+#the route for CAD to EURO conversion
+@views.route("/CADtoEURO")
+def cad_to_euro():
+    #assign name variable to current conversion and render html file
+    return render_template("CADtoEURO.html")
+
+#this route is for when conversion button is clicked in html file
+@views.route("/resultCADtoEURO",methods=['POST',"GET"])
+def resultCADtoEURO():
+    output = request.form.to_dict()
+    #type cast to float variable
+    temp = float(output["value"])
+    #format number to 2 decimal places
+    format_currency = "{:.2f}".format(temp)
+    #conversion calculation
+    result = 0.698117 * temp
+    #format number to 2 decimal places
+    format_float = "{:.2f}".format(result)
+    #assign variables and render html file
+    return render_template("CADtoEURO.html", result=format_float, currency=format_currency)    
+
+#the route for EURO to CAD conversion
+@views.route("/EUROtoCAD")
+def euro_to_cad():
+    #assign name variable to current conversion and render html file
+    return render_template("EUROtoCAD.html")
+
+#this route is for when conversion button is clicked in html file
+@views.route("/resultEUROtoCAD",methods=['POST',"GET"])
+def resultEUROtoCAD():
+    output = request.form.to_dict()
+    #type cast to float variable
+    temp = float(output["value"])
+    #format number to 2 decimal places
+    format_currency = "{:.2f}".format(temp)
+    #conversion calculation
+    result = 1.43243 * temp
+    #format number to 2 decimal places
+    format_float = "{:.2f}".format(result)
+    #assign variables and render html file
+    return render_template("EUROtoCAD.html", result=format_float, currency=format_currency)   
