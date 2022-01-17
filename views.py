@@ -4,6 +4,13 @@ from flask import Blueprint, render_template, request, redirect, url_for
 views = Blueprint(__name__, "views")
 
 
+
+
+
+
+
+
+
 #assigning routes that link to the same home page
 @views.route("/")
 @views.route("home")
@@ -21,6 +28,9 @@ def cad_to_usd():
 #this route is for when conversion button is clicked in html file
 @views.route("/resultCADtoUSD",methods=['POST', "GET"])
 def resultCADtoUSD():
+
+   # response = request.get("https://free.currconv.com/api/v7/convert?q=CAD_USD&compact=ultra&apiKey=816957e984f2baccfb9d").json()
+    
     output = request.form.to_dict()
     #typecast output to a float variable
     temp = float(output["value"])
